@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.application.Controller.Admin.AddEmployeeController"
+            fx:id="rootPane"
+            styleClass="root">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar"
+              spacing="15"
+              alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <!-- Logo -->
+            <Label>
+                <graphic>
+                    <ImageView fx:id="logoImageView"
+                               fitHeight="200"
+                               fitWidth="200"
+                               preserveRatio="true"/>
+                </graphic>
+            </Label>
+
+            <Separator prefWidth="200"/>
+            <!-- Sidebar Buttons -->
+            <Button text="Dashboard" onAction="#handleDashboard" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Sales" onAction="#handleSales" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Inventory" onAction="#handleInventory" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Add Employee" onAction="#handleAddEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button active"/>
+            <Button text="Update Employee" onAction="#handleUpdateEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="About" onAction="#handleAbout" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Settings" onAction="#handleSettings" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" prefWidth="210" prefHeight="40" styleClass="sidebar-button">
+                <VBox.margin>
+                    <Insets top="20"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- CENTER TABLE -->
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="50" right="20" bottom="50" left="20"/>
+            </padding>
+
+            <Label text="All Employees" style="-fx-font-size: 28; -fx-font-weight: bold;"/>
+            <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                <TableView fx:id="employeesTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" text="EMP_ID" prefWidth="100"/>
+                        <TableColumn fx:id="colFirstName" text="First Name" prefWidth="150"/>
+                        <TableColumn fx:id="colLastName" text="Last Name" prefWidth="150"/>
+                        <TableColumn fx:id="colContact" text="Contact Number" prefWidth="160"/>
+                        <TableColumn fx:id="colPosition" text="Position" prefWidth="120"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                        <TableColumn fx:id="colCreatedAt" text="Created At" prefWidth="130"/>
+                    </columns>
+                    <placeholder>
+                        <Label text="No employees found" style="-fx-text-fill: gray; -fx-font-size: 16;"/>
+                    </placeholder>
+                </TableView>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+    <!-- RIGHT FORM -->
+    <right>
+        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+            <VBox spacing="20" alignment="TOP_CENTER">
+                <padding>
+                    <Insets top="50" right="100" bottom="50" left="50"/>
+                </padding>
+
+                <Label text="Register New Employee" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15;" maxWidth="400">
+                    <Label text="Employee ID:"/>
+                    <TextField fx:id="idField" promptText="e.g., E003"/>
+                    <Label text="First Name:"/>
+                    <TextField fx:id="firstNameField" promptText="Enter First Name"/>
+                    <Label text="Last Name:"/>
+                    <TextField fx:id="lastNameField" promptText="Enter Last Name"/>
+                    <Label text="Contact Number:"/>
+                    <TextField fx:id="contactField" promptText="e.g., 0781234565"/>
+                    <Label text="Password:"/>
+                    <PasswordField fx:id="passwordField" promptText="Enter Password (min 6 chars)"/>
+                    <Label text="Position:"/>
+                    <ComboBox fx:id="positionComboBox" promptText="Select Position"/>
+                    <Label text="Status:"/>
+                    <ComboBox fx:id="statusComboBox" promptText="Select Status"/>
+                    <Label text="Created At:"/>
+                    <DatePicker fx:id="createdAtPicker" disable="false"/>
+                    <Button text="Add Employee" onAction="#saveEmployee" prefWidth="300" prefHeight="45"/>
+                    <Label fx:id="statusLabel"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </right>
+</BorderPane>

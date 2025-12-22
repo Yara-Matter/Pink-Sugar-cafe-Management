@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.application.Controller.Employee.CustomerController"
+            fx:id="rootPane"
+            styleClass="root">
+
+    <left>
+        <VBox styleClass="sidebar" spacing="15" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <Label>
+                <graphic>
+                    <ImageView fx:id="logoImageView" fitHeight="180" fitWidth="180" preserveRatio="true"/>
+                </graphic>
+            </Label>
+
+            <Separator prefWidth="200"/>
+
+            <!-- Sidebar Buttons -->
+            <Button text="Dashboard"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleDashboard"/>
+
+            <Button text="Menu"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleMenu"/>
+
+            <Button text="Customer"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button active"
+                    onAction="#handleCustomer"/>
+
+            <Button text="About"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleAbout"/>
+
+            <Button text="Settings"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleSettings"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton"
+                    text="Logout"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleLogout"/>
+
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER">
+            <padding><Insets top="50" right="20" bottom="50" left="20"/></padding>
+            <Label text="Customer Records" style="-fx-font-size: 28; -fx-font-weight: bold;"/>
+            <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                <TableView fx:id="customerTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" text="CUS_ID" prefWidth="120"/>
+                        <TableColumn fx:id="colName" text="Full Name" prefWidth="200"/>
+                        <TableColumn fx:id="colAddress" text="Address" prefWidth="200"/>
+                        <TableColumn fx:id="colContact" text="Contact Number" prefWidth="180"/>
+                    </columns>
+                </TableView>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+    <right>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="20" alignment="TOP_CENTER">
+                <padding><Insets top="50" right="50" bottom="50" left="50"/></padding>
+                <Label text="New Customer" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                <VBox spacing="10" styleClass="card" maxWidth="350">
+                    <Label text="Customer ID:"/>
+                    <TextField fx:id="idField" promptText="e.g., C004"/>
+                    <Label text="Full Name:"/>
+                    <TextField fx:id="nameField" promptText="Enter Name"/>
+                    <Label text="Address:"/>
+                    <TextField fx:id="addressField" promptText="e.g., Cairo, Giza"/>
+                    <Label text="Contact Number:"/>
+                    <TextField fx:id="contactField" promptText="e.g., 010..."/>
+
+                    <Button text="Save Customer" onAction="#saveCustomer" prefWidth="300" prefHeight="45" styleClass="add-button"/>
+                    <Label fx:id="statusLabel"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </right>
+</BorderPane>

@@ -1,0 +1,245 @@
+
+
+.root {
+    -fx-background-color: #f3dec3;
+    -fx-text-fill: #35221b;
+}
+
+.main-bg {
+    -fx-background-color: #f3dec3;
+}
+
+/* Page Title */
+.page-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #35221b;
+}
+
+/* Cards (Sales, Orders, Customers) in Dashboard */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 5);
+}
+
+/* Primary Buttons */
+.primary-button {
+    -fx-background-color: #5c4637;
+    -fx-text-fill: #f3dec3;
+    -fx-background-radius: 10;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #6b5445;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #35221b;
+    -fx-padding: 20;
+}
+
+/* Sidebar Buttons  */
+.sidebar-button {
+    -fx-background-color: #4b3a2e;
+    -fx-text-fill: #f3dec3;
+    -fx-background-radius: 20;
+    -fx-font-size: 15px;
+    -fx-padding: 10 20;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #5c4637;
+}
+
+.sidebar-button:pressed {
+    -fx-background-color: #3d2c23;
+}
+
+/* Active Sidebar Button  */
+.sidebar-button:selected,
+.sidebar-button.active {
+    -fx-background-color: #d4b79a !important;
+    -fx-text-fill: #35221b !important;
+    -fx-background-radius: 20;
+}
+
+/* Logout Button */
+#logoutButton {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+}
+
+#logoutButton:hover {
+    -fx-background-color: #e74c3c;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #35221b;
+}
+
+.label.gray {
+    -fx-text-fill: #7f6a5a;
+}
+
+/* Slider */
+.slider .track {
+    -fx-background-color: #d4b79a;
+}
+
+.slider .thumb {
+    -fx-background-color: #35221b;
+}
+
+/* ToggleButton */
+.toggle-button {
+    -fx-background-color: #5c4637;
+    -fx-text-fill: #f3dec3;
+    -fx-background-radius: 20;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #d4b79a;
+    -fx-text-fill: #35221b;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #35221b;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #d4b79a;
+    -fx-text-fill: #35221b;
+}
+
+/* TextField, ComboBox */
+.text-field, .password-field, .combo-box {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-radius: 10;
+    -fx-padding: 5 10;
+}
+
+
+/* Charts
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-plot-background {
+    -fx-background-color: #ffffff;
+}
+
+.chart-line-symbol {
+    -fx-background-color: #e74c3c;
+}
+
+
+.scroll-pane {
+    -fx-background: #f3dec3;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: transparent;
+}o
+
+/* Scroll bar */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #5c4637;
+    -fx-background-radius: 10;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #6b5445;
+}
+
+/* Add Button */
+.add-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+.add-button:hover {
+    -fx-background-color: #2ecc71;
+}
+
+/* Update Button */
+.update-button {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+
+.update-button:hover {
+    -fx-background-color: #3498db;
+}
+
+/* Delete Button */
+.delete-button {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+.delete-button:hover {
+    -fx-background-color: #e74c3c;
+}
+
+/* Clear Button */
+.clear-button {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+}
+.clear-button:hover {
+    -fx-background-color: #5d6d7e;
+}
+
+
+.chart-pie-node {
+    -fx-border-color: transparent;
+}
+

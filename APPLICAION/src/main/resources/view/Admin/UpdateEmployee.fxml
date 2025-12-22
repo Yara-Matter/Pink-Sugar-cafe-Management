@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.application.Controller.Admin.UpdateEmployeeController"
+            fx:id="rootPane">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar"
+              spacing="15"
+              alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <!-- Logo -->
+            <Label>
+                <graphic>
+                    <ImageView fx:id="logoImageView"
+                               fitHeight="200" fitWidth="200" preserveRatio="true">
+                        <image>
+                            <Image url="@../../images/logo.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+
+            <Separator prefWidth="200"/>
+
+            <!-- Sidebar Buttons -->
+            <Button text="Dashboard" onAction="#handleDashboard" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Sales" onAction="#handleSales" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Inventory" onAction="#handleInventory" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Add Employee" onAction="#handleAddEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Update Employee" onAction="#handleUpdateEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button active"/>
+            <Button text="About" onAction="#handleAbout" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Settings" onAction="#handleSettings" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <!-- الـ active هيخلي زر Settings highlighted في الـ Dark Mode -->
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" prefWidth="210" prefHeight="40" styleClass="sidebar-button">
+                <VBox.margin>
+                    <Insets top="20"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- Center Content -->
+    <center>
+        <HBox spacing="20" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- TableView Employees -->
+            <TableView fx:id="employeeTable" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="EMP_ID" fx:id="empIdCol"/>
+                    <TableColumn text="First Name" fx:id="firstNameCol"/>
+                    <TableColumn text="Last Name" fx:id="lastNameCol"/>
+                    <TableColumn text="Contact Number" fx:id="contactCol"/>
+                    <TableColumn text="Position" fx:id="positionCol"/>
+                    <TableColumn text="Status" fx:id="statusCol"/>
+                    <TableColumn text="Created At" fx:id="createdAtCol"/>
+                </columns>
+            </TableView>
+
+            <!-- Form Update Employee -->
+            <VBox spacing="10" maxWidth="400" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10,0,0,5);">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+
+                <Label text="Update Employee" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <HBox spacing="5">
+                    <TextField fx:id="searchIdField" promptText="Enter EMP ID or Name" HBox.hgrow="ALWAYS"/>
+                    <Button text="Search" onAction="#searchEmployee" style="-fx-background-color: #35221b; -fx-text-fill: white;"/>
+                </HBox>
+
+                <Separator/>
+
+                <Label text="First Name"/>
+                <TextField fx:id="firstNameField"/>
+
+                <Label text="Last Name"/>
+                <TextField fx:id="lastNameField"/>
+
+                <Label text="Contact Number"/>
+                <TextField fx:id="contactField"/>
+
+                <Label text="Password"/>
+                <PasswordField fx:id="passwordField"/>
+
+                <Label text="Role"/>
+                <ComboBox fx:id="roleComboBox"/>
+
+                <Label text="Status"/>
+                <ComboBox fx:id="statusComboBox"/>
+
+                <Label text="Created At"/>
+                <DatePicker fx:id="createdAtPicker"/>
+
+                <Button text="Update Record" onAction="#updateRecord" prefHeight="35" style="-fx-background-color: #00b894; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Label fx:id="statusLabel"/>
+            </VBox>
+
+        </HBox>
+    </center>
+</BorderPane>

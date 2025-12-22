@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.application.Controller.Employee.DashboardE"
+            fx:id="rootPane"
+            styleClass="root">
+
+    <left>
+        <VBox styleClass="sidebar" spacing="15" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <Label>
+                <graphic>
+                    <ImageView fx:id="logoImageView" fitHeight="180" fitWidth="180" preserveRatio="true"/>
+                </graphic>
+            </Label>
+
+            <Separator prefWidth="200"/>
+
+            <!-- Sidebar Buttons -->
+            <Button text="Dashboard"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button active"
+                    onAction="#handleDashboard"/>
+
+            <Button text="Menu"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleMenu"/>
+
+            <Button text="Customer"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleCustomer"/>
+
+            <Button text="About"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleAbout"/>
+
+            <Button text="Settings"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleSettings"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton"
+                    text="Logout"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleLogout"/>
+
+        </VBox>
+    </left>
+
+
+    <center>
+        <VBox spacing="25" styleClass="main-bg">
+            <padding>
+                <Insets top="30" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <VBox>
+                    <Label text="Welcome Back," styleClass="label" style="-fx-font-size: 18;"/>
+                    <Label fx:id="userNameLabel" styleClass="page-title" style="-fx-padding: 0;"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <VBox alignment="CENTER_RIGHT">
+                    <Label fx:id="timeLabel" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #35221b;" text="08:22:32 PM"/>
+                    <Label fx:id="dateLabel" style="-fx-font-size: 16;" text="November 22, 2024"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="30" alignment="CENTER">
+                <VBox alignment="CENTER" styleClass="card" prefWidth="280" prefHeight="130">
+                    <Label text="Total Sales" style="-fx-font-size: 16; -fx-text-fill: gray;"/>
+                    <Label fx:id="salesLabel" text="\$0.00" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #5c4637;"/>
+                </VBox>
+
+                <VBox alignment="CENTER" styleClass="card" prefWidth="280" prefHeight="130">
+                    <Label text="Total Orders" style="-fx-font-size: 16; -fx-text-fill: gray;"/>
+                    <Label fx:id="ordersLabel" text="0" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #5c4637;"/>
+                </VBox>
+
+                <VBox alignment="CENTER" styleClass="card" prefWidth="280" prefHeight="130">
+                    <Label text="Active Customers" style="-fx-font-size: 16; -fx-text-fill: gray;"/>
+                    <Label fx:id="customersLabel" text="0" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #5c4637;"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="30" VBox.vgrow="ALWAYS">
+                <VBox styleClass="card" HBox.hgrow="ALWAYS" alignment="CENTER">
+                    <Label text="Inventory Overview" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                    <AreaChart fx:id="inventoryChart" legendVisible="false">
+                        <xAxis><CategoryAxis side="BOTTOM" label="Month"/></xAxis>
+                        <yAxis><NumberAxis side="LEFT" label="Quantity"/></yAxis>
+                    </AreaChart>
+                </VBox>
+
+                <VBox styleClass="card" prefWidth="450" alignment="CENTER">
+                    <Label text="Sales Distribution" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                    <PieChart fx:id="salesPieChart" />
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

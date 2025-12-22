@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.application.Controller.Employee.MenuController"
+            fx:id="rootPane"
+            styleClass="root">
+
+    <!-- Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" spacing="15" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <Label>
+                <graphic>
+                    <ImageView fx:id="logoImageView" fitHeight="180" fitWidth="180" preserveRatio="true"/>
+                </graphic>
+            </Label>
+
+            <Separator prefWidth="200"/>
+
+            <!-- Sidebar Buttons -->
+            <Button text="Dashboard"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleDashboard"/>
+
+            <Button text="Menu"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button active"/>
+
+            <Button text="Customer"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleCustomer"/>
+
+            <Button text="About"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleAbout"/>
+
+            <Button text="Settings"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleSettings"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton"
+                    text="Logout"
+                    prefWidth="210"
+                    prefHeight="40"
+                    styleClass="sidebar-button"
+                    onAction="#handleLogout"/>
+
+        </VBox>
+    </left>
+
+    <!-- Center: Menu Grid -->
+    <center>
+        <ScrollPane fitToWidth="true"
+                    styleClass="main-bg"
+                    style="-fx-background: #f3dec3; -fx-background-color: transparent;">
+            <content>
+                <VBox spacing="25" styleClass="main-bg">
+                    <padding>
+                        <Insets top="30" right="40" bottom="30" left="40"/>
+                    </padding>
+
+                    <Label text="Menu"
+                           styleClass="page-title"
+                           alignment="CENTER"/>
+
+                    <GridPane fx:id="menuGrid"
+                              hgap="30"
+                              vgap="30"
+                              alignment="TOP_CENTER"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- Right: Cart -->
+    <right>
+        <VBox spacing="15"
+              prefWidth="300"
+              alignment="TOP_CENTER"
+              styleClass="card">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <Label text="Cart"
+                   style="-fx-font-size: 22; -fx-font-weight: bold;"/>
+
+            <TableView fx:id="cartTable" prefHeight="260">
+                <columns>
+                    <TableColumn fx:id="itemColumn" text="Product Name" prefWidth="120"/>
+                    <TableColumn fx:id="qtyColumn" text="Quantity" prefWidth="60"/>
+                    <TableColumn fx:id="priceColumn" text="Price" prefWidth="80"/>
+                </columns>
+            </TableView>
+
+            <Separator/>
+
+            <Label text="Total"
+                   style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+            <Label fx:id="totalLabel" text="Rs. 0.00"
+                   style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+            <ComboBox fx:id="customerComboBox" prefWidth="220" promptText="Select Customer"/>
+
+            <Button text="Pay" onAction="#handlePay"
+                    prefWidth="220"
+                    styleClass="add-button"/>
+
+            <Button text="Cancel" onAction="#handleCancel"
+                    prefWidth="220"
+                    styleClass="danger-button"/>
+        </VBox>
+    </right>
+
+</BorderPane>

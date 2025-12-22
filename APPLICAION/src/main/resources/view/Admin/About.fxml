@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.application.Controller.Admin.AboutController"
+            fx:id="rootPane">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar"
+              spacing="15"
+              alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <!-- Logo -->
+            <Label>
+                <graphic>
+                    <ImageView fx:id="logoImageView"
+                               fitHeight="200" fitWidth="200" preserveRatio="true">
+                        <image>
+                            <Image url="@../../images/logo.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+
+            <Separator prefWidth="200"/>
+
+            <!-- Sidebar Buttons -->
+            <Button text="Dashboard" onAction="#handleDashboard" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Sales" onAction="#handleSales" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Inventory" onAction="#handleInventory" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Add Employee" onAction="#handleAddEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Update Employee" onAction="#handleUpdateEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="About" onAction="#handleAbout" prefWidth="210" prefHeight="40" styleClass="sidebar-button active"/>
+            <Button text="Settings" onAction="#handleSettings" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" prefWidth="210" prefHeight="40" styleClass="sidebar-button">
+                <VBox.margin>
+                    <Insets top="20"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </left>
+
+
+    <center>
+        <BorderPane styleClass="main-bg">
+            <center>
+                <ScrollPane fitToWidth="true"
+                            fitToHeight="true"
+                            vbarPolicy="AS_NEEDED"
+                            hbarPolicy="NEVER"
+                            style="-fx-background: transparent; -fx-background-color: transparent;">
+
+                    <VBox alignment="TOP_CENTER"
+                          spacing="30"
+                          styleClass="main-bg">
+                        <padding>
+                            <Insets top="40" right="60" bottom="40" left="60"/>
+                        </padding>
+
+                        <!-- App Information -->
+                        <VBox spacing="15" styleClass="card">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="ℹ" styleClass="icon-label"/>
+                                <Label text="App Information" styleClass="page-title"/>
+                            </HBox>
+                            <Separator/>
+                            <Text text="Cafe Moon is a high-performance JavaFX desktop application integrated with an Oracle SQL database to automate cafe operations. It features a modular MVC architecture to manage real-time Inventory tracking (with image support), Employee lifecycle management, and Sales analytics. The system focuses on data persistence, optimized search functionality, and a seamless, responsive user experience."
+                                  wrappingWidth="700" styleClass="text-content"/>
+                        </VBox>
+
+                        <!-- Team Members -->
+                        <VBox spacing="15" styleClass="card">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="👥" styleClass="icon-label"/>
+                                <Label text="Team Members" styleClass="page-title"/>
+                            </HBox>
+                            <Separator/>
+                            <VBox spacing="12" alignment="CENTER_LEFT">
+                                <Label text="• Yara Matter" styleClass="text-content"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- Version Information -->
+                        <VBox spacing="15" styleClass="card">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="🛠" styleClass="icon-label"/>
+                                <Label text="Version Information" styleClass="page-title"/>
+                            </HBox>
+                            <Separator/>
+                            <HBox spacing="50">
+                                <VBox spacing="5">
+                                    <Label text="Current Version:" styleClass="text-bold"/>
+                                    <Label text="v1.0.2 (Stable)" styleClass="text-content"/>
+                                </VBox>
+                                <VBox spacing="5">
+                                    <Label text="Last Build:" styleClass="text-bold"/>
+                                    <Label text="December 2025" styleClass="text-content"/>
+                                </VBox>
+                                <VBox spacing="5">
+                                    <Label text="Platform:" styleClass="text-bold"/>
+                                    <Label text="JavaFX 21 + Oracle DB" styleClass="text-content"/>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+
+                        <Region VBox.vgrow="ALWAYS"/>
+                    </VBox>
+                </ScrollPane>
+            </center>
+
+            <bottom>
+                <Label text="Developed with ❤ for Cafe Moon"
+                       styleClass="text-muted"
+                       alignment="CENTER"
+                       BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets top="10" bottom="20" left="20" right="20"/>
+                    </padding>
+                </Label>
+            </bottom>
+        </BorderPane>
+    </center>
+</BorderPane>

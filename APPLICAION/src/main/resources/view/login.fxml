@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.application.Controller.Login">
+
+    <!-- Left side (Logo and background) -->
+    <left>
+        <VBox alignment="CENTER" prefWidth="400" spacing="30" style="-fx-background-color: #35221b;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="50" left="50" right="50" top="50" />
+            </padding>
+
+            <!-- Logo -->
+            <ImageView fx:id="logoImage" fitHeight="400" fitWidth="400">
+                <image>
+                    <Image url="@../images/logo.png" />
+                </image>
+            </ImageView>
+
+            <!--            Cafe Name-->
+            <!--            <Label text="Cafe MOON" textFill="WHITE">-->
+            <!--                <font>-->
+            <!--                    <Font name="Segoe Script Bold" size="32" />-->
+            <!--                </font>-->
+            <!--            </Label>-->
+        </VBox>
+    </left>
+
+    <!-- Center (Login form) -->
+    <center>
+        <VBox alignment="CENTER"
+              prefWidth="400"
+              spacing="20"
+              style="-fx-background-color: #f3dec3;
+              -fx-background-radius: 20;
+              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5);"
+              BorderPane.alignment="CENTER">
+
+            <padding>
+                <Insets bottom="50" left="50" right="50" top="50" />
+            </padding>
+
+            <Label text="Login">
+                <font>
+                    <Font name="Arial Bold" size="40" />
+                </font>
+            </Label>
+
+            <Label text="Username:">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+
+            <TextField fx:id="usernameField" prefHeight="38.0" prefWidth="429.0"
+                       style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #cb9158; -fx-font-size: 16px; -fx-font-weight: bold;" />
+
+
+            <Label text="Password:">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+
+            <PasswordField fx:id="passwordField" prefHeight="42.0" prefWidth="386.0"
+                           style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #cb9158; -fx-font-size: 16px; -fx-font-weight: bold;" />
+
+
+
+            <Button fx:id="loginButton"
+                    text="Login"
+                    prefHeight="50"
+                    prefWidth="300"
+                    onAction="#handleLogin"
+                    style="-fx-background-color: #38261e; -fx-text-fill: white; -fx-font-size: 18; -fx-background-radius: 25;" />
+
+
+            <Label fx:id="error_msg"
+                   text=""
+                   style="-fx-text-fill: red; -fx-font-size: 14px;" />
+
+
+            <Hyperlink text="Forgot your password?"
+                       onAction="#handleForgotPassword"
+                       style="-fx-text-fill: #000000; -fx-font-size: 13px;" />
+
+
+            <!-- Timer Label (Session duration using threads)-->
+            <Label fx:id="timerLabel" text="Seconds since start: 0"
+                   style="-fx-font-size: 14px; -fx-text-fill: #000000;" />
+        </VBox>
+    </center>
+</BorderPane>

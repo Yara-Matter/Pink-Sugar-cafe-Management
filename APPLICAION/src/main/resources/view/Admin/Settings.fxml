@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.application.Controller.Admin.SettingsController"
+            fx:id="rootPane"
+            styleClass="root">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar"
+              spacing="15"
+              alignment="TOP_CENTER">
+            <padding>
+                <Insets top="30" bottom="30" left="20" right="20"/>
+            </padding>
+
+            <!-- Logo -->
+            <Label>
+                <graphic>
+                    <ImageView fx:id="logoImageView"
+                               fitHeight="200" fitWidth="200" preserveRatio="true">
+                        <image>
+                            <Image url="@../../images/logo.png"/>
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+
+            <Separator prefWidth="200"/>
+
+            <!-- Sidebar Buttons -->
+            <Button text="Dashboard" onAction="#handleDashboard" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Sales" onAction="#handleSales" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Inventory" onAction="#handleInventory" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Add Employee" onAction="#handleAddEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Update Employee" onAction="#handleUpdateEmployee" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="About" onAction="#handleAbout" prefWidth="210" prefHeight="40" styleClass="sidebar-button"/>
+            <Button text="Settings" onAction="#handleSettings" prefWidth="210" prefHeight="40" styleClass="sidebar-button active"/>
+
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" prefWidth="210" prefHeight="40" styleClass="sidebar-button">
+                <VBox.margin>
+                    <Insets top="20"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </left>
+
+
+
+    <!-- Center Content -->
+    <center>
+        <ScrollPane fitToWidth="true"
+                    fitToHeight="true"
+                    vbarPolicy="AS_NEEDED"
+                    hbarPolicy="NEVER"
+                    style="-fx-background: transparent; -fx-background-color: transparent;">
+
+            <VBox fx:id="centerVBox"
+                  spacing="30"
+                  styleClass="main-bg">
+                <padding>
+                    <Insets top="50" right="100" bottom="50" left="100"/>
+                </padding>
+
+
+                <Label fx:id="titleLabel" text="System Settings" styleClass="page-title"/>
+
+                <!-- Font Size Appearance -->
+                <VBox spacing="15" styleClass="card">
+                    <Label text="Font Size Appearance" style="-fx-font-weight: bold;"/>
+                    <HBox spacing="20" alignment="CENTER_LEFT">
+                        <Label text="Small"/>
+                        <Slider fx:id="fontSlider" min="12" max="24" value="14" showTickLabels="true" showTickMarks="true" HBox.hgrow="ALWAYS"/>
+                        <Label text="Large"/>
+                        <Label fx:id="fontValueLabel" text="14px" style="-fx-font-weight: bold;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Appearance: Dark / Light Mode -->
+                <VBox spacing="15" styleClass="card">
+                    <Label text="Appearance" style="-fx-font-weight: bold;"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Dark Mode:" style="-fx-font-weight: bold;"/>
+                        <ToggleButton fx:id="darkModeToggle" text="Off"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Database Connectivity -->
+                <VBox spacing="15" styleClass="card">
+                    <Label text="Database Connectivity" style="-fx-font-weight: bold;"/>
+                    <Label text="Test the connection to your Oracle SQL Database."
+                           fx:id="dbDescLabel"
+                           styleClass="gray"/>
+                    <Button text="Test Database Connection" onAction="#testDBConnection" styleClass="primary-button"/>
+                    <Label fx:id="dbStatusLabel" text="Status: Unknown"/>
+                </VBox>
+
+                <Region VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
