@@ -21,7 +21,7 @@
     -fx-background-radius: 16;
     -fx-padding: 24;
 
-    -fx-border-color: rgba(255, 105, 180, 0.38);  /* حافظنا على الإطار اللطيف */
+    -fx-border-color: rgba(255, 105, 180, 0.38);  
     -fx-border-width: 1.4;
     -fx-border-radius: 16;
 
@@ -143,9 +143,9 @@
     -fx-padding: 6 12;
 }
 
-/* Add / Update / Delete buttons (adjusted to pink theme) */
+/* Add / Update / Delete buttons  */
 .add-button {
-    -fx-background-color: #a8d76f;   /* أخضر ناعم أو غيريه لـ #ff9dc7 لو عايزة كله pink */
+    -fx-background-color: #a8d76f;  
     -fx-text-fill: white;
 }
 
@@ -172,22 +172,22 @@
 /* Slider */
 
 .slider .track {
-    -fx-background-color: #ffd4e8;          /* الخط الكلي - وردي فاتح */
+    -fx-background-color: #ffd4e8;         
     -fx-background-insets: 0;
     -fx-pref-height: 8;
     -fx-background-radius: 4;
 }
 
 .slider .filled-track {
-    -fx-background-color: #ff9dc7;          /* الجزء الممتلئ - لونك الرئيسي */
+    -fx-background-color: #ff9dc7;        
     -fx-background-insets: 0;
     -fx-background-radius: 4;
 }
 
 .slider .thumb {
-    -fx-background-color: #ff85b8;          /* المقبض (الدائرة) */
+    -fx-background-color: #ff85b8;         
     -fx-background-insets: 0;
-    -fx-background-radius: 999em;           /* دائرة كاملة */
+    -fx-background-radius: 999em;           
     -fx-pref-width: 20;
     -fx-pref-height: 20;
     -fx-effect: dropshadow(gaussian, rgba(201, 90, 143, 0.5), 10, 0, 0, 3);
@@ -206,10 +206,10 @@
 }
 
 .slider .tick-label {
-    -fx-text-fill: #1a1a1a !important;      /* أسود غامق */
-    -fx-font-size: 13px !important;         /* أكبر شوية عشان يبان أكتر */
+    -fx-text-fill: #1a1a1a !important;     
+    -fx-font-size: 13px !important;        
     -fx-font-weight: bold !important;
-    -fx-padding: 4 0 0 0;                   /* مسافة من فوق */
+    -fx-padding: 4 0 0 0;                   
 }
 
 .slider .axis-tick-mark,
@@ -224,7 +224,6 @@
 }
 
 
-/* Sidebar - الزر النشط (Settings دلوقتي) */
 .sidebar-button.active,
 .sidebar-button:selected {
     -fx-background-color: #ff85b8 !important;
@@ -232,7 +231,7 @@
     -fx-effect: dropshadow(gaussian, rgba(255, 105, 180, 0.5), 12, 0, 0, 5);
 }
 
-/* الـ Label اللي بيظهر قيمة الـ font size (14px) */
+
 #fontValueLabel {
     -fx-background-color: #ffe4f0;
     -fx-background-radius: 10;
@@ -246,9 +245,9 @@
 }
 
 .toggle-button {
-    -fx-background-color: #ffd4e8;          /* Off: وردي فاتح */
+    -fx-background-color: #ffd4e8;      
     -fx-text-fill: #c95a8f;
-    -fx-background-radius: 30;              /* rounded جدًا عشان يبقى زي switch */
+    -fx-background-radius: 30;             
     -fx-border-radius: 30;
     -fx-border-color: #ff9dc7;
     -fx-border-width: 1.5;
@@ -260,7 +259,7 @@
 }
 
 .toggle-button:selected {
-    -fx-background-color: #ff9dc7;          /* On: الوردي الرئيسي */
+    -fx-background-color: #ff9dc7;         
     -fx-text-fill: white;
 }
 
@@ -278,9 +277,6 @@
 }
 
 
-/* ────────────── Inventory Action Buttons ────────────── */
-
-/* Add Button - أخضر ناعم (إيجابي) */
 .add-button {
     -fx-background-color: #a8d76f;
     -fx-text-fill: white;
@@ -299,7 +295,6 @@
     -fx-translate-y: 1px;
 }
 
-/* Update Button - أزرق ناعم (تعديل آمن) */
 .update-button {
     -fx-background-color: #6ab0e2;
     -fx-text-fill: white;
@@ -318,7 +313,7 @@
     -fx-translate-y: 1px;
 }
 
-/* Delete Button - أحمر/وردي غامق (تحذير) */
+
 .delete-button {
     -fx-background-color: #e84a6f;
     -fx-text-fill: white;
@@ -337,7 +332,7 @@
     -fx-translate-y: 1px;
 }
 
-/* Clear Button - رمادي وردي (محايد/ثانوي) */
+
 .clear-button {
     -fx-background-color: #d4a5b8;
     -fx-text-fill: white;
@@ -381,8 +376,8 @@
 }
 
 .search-button {
-    -fx-background-color: #ffadd3;          /* وردي فاتح لطيف للبحث */
-    -fx-text-fill: #2e0d1a;                 /* نص غامق عشان يبان */
+    -fx-background-color: #ffadd3;          
+    -fx-text-fill: #2e0d1a;               
     -fx-font-weight: bold;
     -fx-background-radius: 14;
     -fx-border-radius: 14;
