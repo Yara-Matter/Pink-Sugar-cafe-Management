@@ -50,26 +50,17 @@ public class SettingsController extends BaseController {
 
         //Dark / Light Mode
         // Dark / Light Mode
-        boolean isDark = ThemeManager.isDarkMode();  // بيجيب الحالة الحالية من ThemeManager
+        boolean isDark = ThemeManager.isDarkMode(); 
 
-// افتراضيًا: البرنامج يفتح في Light Mode (Dark = false)
-// فالـ ToggleButton يكون غير مختار (selected = false)، ومكتوب عليه "On" عشان لما نضغط يفعّل الـ Dark
-        darkModeToggle.setSelected(isDark);          // لو Dark مفعل فعلاً (نادر في البداية)، هيبقى selected
-        darkModeToggle.setText(isDark ? "Off" : "On");  // لو Light (الافتراضي) → "On"، لو Dark → "Off"
 
-// تحديث اللوجو حسب الثيم الحالي
+        darkModeToggle.setSelected(isDark);         
+        darkModeToggle.setText(isDark ? "Off" : "On");  
         updateLogoForTheme();
 
-// Listener: لما نضغط على الـ ToggleButton
         darkModeToggle.selectedProperty().addListener((obs, wasPreviouslySelected, isNowSelected) -> {
-            // لو الزر دلوقتي مختار (isNowSelected = true) → يعني نفعّل Dark Mode
-            // لو مش مختار → نرجع Light Mode
-            ThemeManager.switchTheme(isNowSelected);   // true = Dark, false = Light
-
-            // تحديث اللوجو
+        
+            ThemeManager.switchTheme(isNowSelected);   
             updateLogoForTheme();
-
-            // تغيير النص على الزر
             darkModeToggle.setText(isNowSelected ? "Off" : "On");
         });
     }
