@@ -241,7 +241,7 @@ public class UpdateEmployeeController extends BaseController {
     }
 
 
-    /** Clear all form fields */
+    // Clear all form fields 
     private void clearFields() {
         try {
             searchIdField.clear();
@@ -259,7 +259,7 @@ public class UpdateEmployeeController extends BaseController {
         }
     }
 
-    /** Show alert messages */
+    // Show alert messages 
     private void showAlert(String title, String content, Alert.AlertType type) {
         try {
             Alert alert = new Alert(type);
@@ -272,7 +272,7 @@ public class UpdateEmployeeController extends BaseController {
         }
     }
 
-    // --- Navigation Methods ---
+    // Navigation Methods 
     private void switchScene(ActionEvent event, String fxmlPath) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
