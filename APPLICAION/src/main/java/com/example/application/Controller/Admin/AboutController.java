@@ -17,15 +17,13 @@ import java.io.IOException;
 public class AboutController extends BaseController {
 
     @FXML
-    private BorderPane rootPane; // root container من FXML
+    private BorderPane rootPane; 
 
     @FXML
     public void initialize() {
-        super.initialize(null, null); // ← لتحديث اللوجو حسب الثيم
-        // حجم الخط يتم تطبيقه تلقائي عن طريق ThemeManager عند فتح الصفحة
+        super.initialize(null, null); 
     }
 
-    // دالة لإعادة التوجيه بين الصفحات
     private void switchScene(ActionEvent event, String fxmlPath) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
@@ -36,7 +34,7 @@ public class AboutController extends BaseController {
             Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
             Scene scene = new Scene(root, screenBounds.getWidth(), screenBounds.getHeight());
 
-            // تطبيق الثيم وحجم الخط تلقائي على الصفحة الجديدة
+           
             ThemeManager.setScene(scene);
 
             stage.setScene(scene);
@@ -51,7 +49,7 @@ public class AboutController extends BaseController {
         }
     }
 
-    // ==== أزرار الـ Sidebar ====
+   
     @FXML void handleDashboard(ActionEvent event) { switchScene(event, "/view/Admin/Dashboard.fxml"); }
     @FXML void handleLogout(ActionEvent event) { switchScene(event, "/view/login.fxml"); }
     @FXML void handleSales(ActionEvent event) { switchScene(event, "/view/Admin/Sales.fxml"); }
