@@ -12,93 +12,111 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600" prefWidth="1000" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.application.Controller.Login">
+<BorderPane prefHeight="600" prefWidth="1000"
+            style="-fx-background-color: #fff5fb;"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.application.Controller.Login">
 
-    <!-- Left side (Logo and background) -->
+    <!-- Left side – Logo area (ناعم baby pink) -->
     <left>
-        <VBox alignment="CENTER" prefWidth="400" spacing="30" style="-fx-background-color: #35221b;" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" prefWidth="400" spacing="30"
+              style="-fx-background-color: #ffe4f0;
+                     -fx-background-radius: 0 30 30 0;"
+              BorderPane.alignment="CENTER">
             <padding>
-                <Insets bottom="50" left="50" right="50" top="50" />
+                <Insets bottom="60" left="40" right="40" top="60" />
             </padding>
 
             <!-- Logo -->
-            <ImageView fx:id="logoImage" fitHeight="400" fitWidth="400">
+            <ImageView fx:id="logoImage" fitHeight="320" fitWidth="320">
                 <image>
-                    <Image url="@../images/logo.png" />
+                    <Image url="@../images/light.png" />
                 </image>
             </ImageView>
 
-            <!--            Cafe Name-->
-            <!--            <Label text="Cafe MOON" textFill="WHITE">-->
-            <!--                <font>-->
-            <!--                    <Font name="Segoe Script Bold" size="32" />-->
-            <!--                </font>-->
-            <!--            </Label>-->
+            <!-- إذا عايزة تضيفي اسم الكافيه تاني -->
+            <!--
+            <Label text="Cafe MOON" textFill="#ff85c0">
+                <font>
+                    <Font name="Segoe Script Bold" size="36" />
+                </font>
+            </Label>
+            -->
         </VBox>
     </left>
 
-    <!-- Center (Login form) -->
+    <!-- Center – Login Form -->
     <center>
-        <VBox alignment="CENTER"
-              prefWidth="400"
-              spacing="20"
-              style="-fx-background-color: #f3dec3;
-              -fx-background-radius: 20;
-              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5);"
+        <VBox alignment="CENTER" prefWidth="420" spacing="22"
+              style="-fx-background-color: #ffffff;
+                     -fx-background-radius: 28;
+                     -fx-border-color: #ffadd6;
+                     -fx-border-width: 2;
+                     -fx-border-radius: 28;
+                     -fx-effect: dropshadow(gaussian, rgba(255,173,214,0.25), 18, 0, 0, 8);"
               BorderPane.alignment="CENTER">
 
             <padding>
-                <Insets bottom="50" left="50" right="50" top="50" />
+                <Insets bottom="60" left="60" right="60" top="60" />
             </padding>
 
-            <Label text="Login">
+            <Label text="Login"  textFill="#ff85c0">
                 <font>
-                    <Font name="Arial Bold" size="40" />
+                    <Font name="Arial Rounded MT Bold" size="38" />
                 </font>
             </Label>
 
-            <Label text="Username:">
+            <Label text="Username" textFill="#4a1c2e">
                 <font>
-                    <Font size="24.0" />
+                    <Font size="20" />
                 </font>
             </Label>
 
-            <TextField fx:id="usernameField" prefHeight="38.0" prefWidth="429.0"
-                       style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #cb9158; -fx-font-size: 16px; -fx-font-weight: bold;" />
+            <TextField fx:id="usernameField" prefHeight="45" prefWidth="360"
+                       promptText="your username"
+                       style="-fx-background-color: #fff5fb;
+                              -fx-background-radius: 22;
+                              -fx-border-radius: 22;
+                              -fx-border-color: #ffadd6;
+                              -fx-border-width: 1.5;
+                              -fx-font-size: 16px;
+                              -fx-font-weight: bold;
+                              -fx-padding: 10;" />
 
-
-            <Label text="Password:">
+            <Label text="Password" textFill="#4a1c2e">
                 <font>
-                    <Font size="24.0" />
+                    <Font size="20" />
                 </font>
             </Label>
 
-            <PasswordField fx:id="passwordField" prefHeight="42.0" prefWidth="386.0"
-                           style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #cb9158; -fx-font-size: 16px; -fx-font-weight: bold;" />
+            <PasswordField fx:id="passwordField" prefHeight="45" prefWidth="360"
+                           promptText="••••••••"
+                           style="-fx-background-color: #fff5fb;
+                                  -fx-background-radius: 22;
+                                  -fx-border-radius: 22;
+                                  -fx-border-color: #ffadd6;
+                                  -fx-border-width: 1.5;
+                                  -fx-font-size: 16px;
+                                  -fx-font-weight: bold;
+                                  -fx-padding: 10;" />
 
-
-
-            <Button fx:id="loginButton"
-                    text="Login"
-                    prefHeight="50"
-                    prefWidth="300"
+            <Button fx:id="loginButton" text="Login ♡" prefHeight="52" prefWidth="320"
                     onAction="#handleLogin"
-                    style="-fx-background-color: #38261e; -fx-text-fill: white; -fx-font-size: 18; -fx-background-radius: 25;" />
+                    style="-fx-background-color: #ff80bf;
+                           -fx-text-fill: white;
+                           -fx-font-size: 18;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 26;
+                           -fx-cursor: hand;" />
 
-
-            <Label fx:id="error_msg"
-                   text=""
-                   style="-fx-text-fill: red; -fx-font-size: 14px;" />
-
+            <Label fx:id="error_msg" text=""
+                   style="-fx-text-fill: #e74c3c; -fx-font-size: 14px;" />
 
             <Hyperlink text="Forgot your password?"
                        onAction="#handleForgotPassword"
-                       style="-fx-text-fill: #000000; -fx-font-size: 13px;" />
+                       style="-fx-text-fill: #e0458f; -fx-font-size: 14px;" />
 
-
-            <!-- Timer Label (Session duration using threads)-->
             <Label fx:id="timerLabel" text="Seconds since start: 0"
-                   style="-fx-font-size: 14px; -fx-text-fill: #000000;" />
+                   style="-fx-font-size: 13px; -fx-text-fill: #7a4a60;" />
         </VBox>
     </center>
 </BorderPane>

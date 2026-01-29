@@ -77,7 +77,7 @@
                                 <Label text="App Information" styleClass="page-title"/>
                             </HBox>
                             <Separator/>
-                            <Text text="Cafe Moon is a high-performance JavaFX desktop application integrated with an Oracle SQL database to automate cafe operations. It features a modular MVC architecture to manage real-time Inventory tracking (with image support), Employee lifecycle management, and Sales analytics. The system focuses on data persistence, optimized search functionality, and a seamless, responsive user experience."
+                            <Text text="Cafe Pink sugar is a high-performance JavaFX desktop application integrated with an Oracle SQL database to automate cafe operations. It features a modular MVC architecture to manage real-time Inventory tracking (with image support), Employee lifecycle management, and Sales analytics. The system focuses on data persistence, optimized search functionality, and a seamless, responsive user experience."
                                   wrappingWidth="700" styleClass="text-content"/>
                         </VBox>
 
@@ -122,7 +122,7 @@
             </center>
 
             <bottom>
-                <Label text="Developed with ❤ for Cafe Moon"
+                <Label text="Developed with ❤ for Cafe Pink Sugar"
                        styleClass="text-muted"
                        alignment="CENTER"
                        BorderPane.alignment="CENTER">

@@ -100,7 +100,7 @@
                     <Label text="Contact Number:"/>
                     <TextField fx:id="contactField" promptText="e.g., 010..."/>
 
-                    <Button text="Save Customer" onAction="#saveCustomer" prefWidth="300" prefHeight="45" styleClass="add-button"/>
+                    <Button text="Save Customer" onAction="#saveCustomer" prefWidth="300" prefHeight="45" styleClass="primary-button"/>
                     <Label fx:id="statusLabel"/>
                 </VBox>
             </VBox>

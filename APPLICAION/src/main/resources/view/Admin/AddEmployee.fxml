@@ -48,6 +48,10 @@
         </VBox>
     </left>
 
+
+
+
+
     <!-- CENTER TABLE -->
     <center>
         <VBox spacing="20" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
@@ -77,14 +81,14 @@
 
     <!-- RIGHT FORM -->
     <right>
-        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" styleClass="form-scroll-pane">
             <VBox spacing="20" alignment="TOP_CENTER">
                 <padding>
                     <Insets top="50" right="100" bottom="50" left="50"/>
                 </padding>
 
                 <Label text="Register New Employee" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
-                <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 15;" maxWidth="400">
+                <VBox spacing="10" styleClass="employee-form-card" maxWidth="400">
                     <Label text="Employee ID:"/>
                     <TextField fx:id="idField" promptText="e.g., E003"/>
                     <Label text="First Name:"/>
@@ -101,7 +105,7 @@
                     <ComboBox fx:id="statusComboBox" promptText="Select Status"/>
                     <Label text="Created At:"/>
                     <DatePicker fx:id="createdAtPicker" disable="false"/>
-                    <Button text="Add Employee" onAction="#saveEmployee" prefWidth="300" prefHeight="45"/>
+                    <Button text="Add Employee" onAction="#saveEmployee" prefWidth="300" prefHeight="50" styleClass="save-button" />
                     <Label fx:id="statusLabel"/>
                 </VBox>
             </VBox>

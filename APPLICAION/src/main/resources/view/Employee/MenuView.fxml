@@ -125,7 +125,7 @@
 
             <Button text="Pay" onAction="#handlePay"
                     prefWidth="220"
-                    styleClass="add-button"/>
+                    styleClass="primary-button"/>
 
             <Button text="Cancel" onAction="#handleCancel"
                     prefWidth="220"

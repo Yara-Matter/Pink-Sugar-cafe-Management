@@ -162,7 +162,7 @@ public class Login implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Reset Password");
         alert.setHeaderText("Support Contact");
-        alert.setContentText("Please contact the Administrator to reset your password.\nEmail: admin@cafemoon.com");
+        alert.setContentText("Please contact the Administrator to reset your password.\nEmail: admin@cafepinksugar.com");
         alert.showAndWait();
     }
 }

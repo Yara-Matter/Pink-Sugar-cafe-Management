@@ -1,245 +1,560 @@
+/* =========================================
+   Dark Mode - Elegant Girly Pink Dark
+   ========================================= */
 
-
-.root {
-    -fx-background-color: #f3dec3;
-    -fx-text-fill: #35221b;
+/* الجذر الرئيسي */
+.root.dark {
+    -fx-background-color: #2d1122;          /* خلفية غامقة وردية-بنية ناعمة */
+    -fx-text-fill: #ffe4f0;                 /* نص افتراضي فاتح */
 }
 
-.main-bg {
-    -fx-background-color: #f3dec3;
+/* الـ sidebar يفضل لونه الوردي-بني الغامق */
+.sidebar {
+    -fx-background-color: #815257 !important;
+    -fx-padding: 20;
+}
+
+/* sidebar buttons - ألوان غامقة متناسقة مع الخلفية */
+.sidebar-button {
+    -fx-background-color: #6b3f55;          /* غامق وردي-بني أغمق شوية من الـ sidebar */
+    -fx-text-fill: #ffe4f0;                 /* وردي فاتح جدًا / أبيض مائل للوردي عشان يبان */
+    -fx-background-radius: 20;
+    -fx-font-size: 15px;
+    -fx-padding: 12 24;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-border-color: #9c5e7a;              /* حدود خفيفة وردية */
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+}
+
+/* Hover: يفتح شوية ويبقى أقوى */
+.sidebar-button:hover {
+    -fx-background-color: #9c5e7a;          /* وردي غامق أفتح */
+    -fx-text-fill: #ffffff;                 /* أبيض نقي */
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* Pressed: يغمق أكتر */
+.sidebar-button:pressed {
+    -fx-background-color: #5a2a44;          /* أغمق شوية */
+    -fx-text-fill: #ffadd3;                 /* وردي فاتح للنص */
+}
+
+/* Active / Selected (الصفحة الحالية) */
+.sidebar-button.active,
+.sidebar-button:selected {
+    -fx-background-color: #ff85b8 !important;   /* وردي قوي زي الثيم */
+    -fx-text-fill: #ffffff !important;
+    -fx-effect: dropshadow(gaussian, rgba(255, 105, 180, 0.5), 12, 0, 0, 5);
+    -fx-border-color: #ff9dc7;
+    -fx-border-width: 2;
+}
+
+/* Logout Button */
+#logoutButton {
+    -fx-background-color: #e84a6f;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+}
+
+#logoutButton:hover {
+    -fx-background-color: #d63955;
+}
+
+/* Primary / Save Buttons */
+.primary-button,
+.save-button {
+    -fx-background-color: #ff9dc7;
+    -fx-text-fill: white;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #e0689e;
+    -fx-border-width: 1.2;
+    -fx-font-weight: bold;
+    -fx-padding: 12 28;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover,
+.save-button:hover {
+    -fx-background-color: #ff85b8;
+}
+
+.primary-button:pressed,
+.save-button:pressed {
+    -fx-background-color: #e0689e;
+    -fx-translate-y: 1px;
+}
+
+/* Search Button */
+.search-button {
+    -fx-background-color: #ffadd3;
+    -fx-text-fill: #2e0d1a;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #ff9dc7;
+    -fx-border-width: 1.3;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #ff9dc7;
+    -fx-text-fill: white;
+}
+
+.search-button:pressed {
+    -fx-background-color: #ff85b8;
+    -fx-translate-y: 1px;
+}
+
+/* Action Buttons (Add, Update, Delete, Clear) */
+.add-button {
+    -fx-background-color: #c8a0d8;      /* بنفسجي وردي فاتح */
+    -fx-text-fill: #1a1a1a;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24;
+}
+
+.add-button:hover {
+    -fx-background-color: #d4b0e0;
+}
+
+.update-button {
+    -fx-background-color: #ffadd3;      /* وردي فاتح */
+    -fx-text-fill: #1a1a1a;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24;
+}
+
+.update-button:hover {
+    -fx-background-color: #ffc1db;
+}
+
+.delete-button {
+    -fx-background-color: #e84a6f;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24;
+}
+
+.delete-button:hover {
+    -fx-background-color: #ff708a;
+}
+
+.clear-button {
+    -fx-background-color: #a06a80;
+    -fx-text-fill: #ffe4f0;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24;
+}
+
+.clear-button:hover {
+    -fx-background-color: #b57e94;
+}
+
+/* Text fields, Password, ComboBox */
+.text-field,
+.password-field,
+.combo-box {
+    -fx-background-color: #3a1a2c;
+    -fx-text-fill: #ffe4f0;
+    -fx-background-radius: 10;
+    -fx-border-color: #ff9dc7;
+    -fx-border-radius: 10;
+    -fx-padding: 6 12;
+    -fx-prompt-text-fill: #c89ab5;
+}
+
+/* TableView */
+/* ────────────── Sales TableView - Dark Mode (خلفية مختلفة + ألوان واضحة) ────────────── */
+
+/* خلفية الجدول ككل (أغمق شوية أو لون مختلف عن الخلفية الرئيسية) */
+.dark .table-view {
+    -fx-background-color: #3e1e32 !important;     /* غامق وردي-بني أغمق شوية من الخلفية الرئيسية */
+    -fx-background-radius: 12;
+    -fx-border-color: #6b3f55;
+    -fx-border-width: 1.2;
+    -fx-border-radius: 12;
+}
+
+/* خلفية رأس الأعمدة (اسماء الأعمدة) - لون مختلف ومميز */
+.dark .table-view .column-header-background {
+    -fx-background-color: #4f2940 !important;     /* لون غامق مميز (وردي-بني داكن) */
+    -fx-background-radius: 12 12 0 0;
+}
+
+/* نص أسماء الأعمدة (Sale ID, Customer Name, Contact No., Total, Date) */
+.dark .table-view .column-header .label {
+    -fx-background-color: #b57e94 !important;            /* وردي فاتح مميز جدًا وواضح */
+    -fx-font-weight: bold !important;
+    -fx-font-size: 14px !important;
+    -fx-text-fill: #ffffff;
+}
+
+/* خلفية الصفوف العادية + نص الخلايا أبيض */
+.dark .table-row-cell {
+    -fx-background-color: #3e1e32 !important;     /* نفس خلفية الجدول */
+    -fx-text-fill: #ffffff !important;            /* النص داخل الخلايا أبيض نقي */
+}
+
+/* Hover على الصف (تفتيح خفيف عشان يبرز) */
+.dark .table-row-cell:hover {
+    -fx-background-color: #5a2a44 !important;     /* رمادي وردي غامق أفتح شوية */
+}
+
+/* الصف المختار (لون قوي عشان يبان) */
+.dark .table-row-cell:selected {
+    -fx-background-color: #ff9dc7 !important;     /* وردي رئيسي */
+    -fx-text-fill: #2d1122 !important;            /* نص غامق عشان يبان على الوردي */
+}
+
+/* النصوص داخل الخلايا (نتأكد إنها أبيض) */
+.dark .table-cell {
+    -fx-text-fill: #ffffff !important;
+    -fx-font-size: 13px;
+}
+
+/* خطوط الفصل بين الصفوف (خفيفة) */
+.dark .table-row-cell .table-cell {
+    -fx-border-color: #6b3f55 transparent transparent transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+
+/* Slider */
+.slider .track {
+    -fx-background-color: #4f2940;
+    -fx-pref-height: 8;
+    -fx-background-radius: 4;
+}
+
+.slider .filled-track {
+    -fx-background-color: #ff9dc7;
+    -fx-background-radius: 4;
+}
+
+.slider .thumb {
+    -fx-background-color: #ff85b8;
+    -fx-background-radius: 999em;
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #ff709f;
+}
+
+.slider .thumb:pressed {
+    -fx-background-color: #e0689e;
+}
+
+.slider .tick-label {
+    -fx-text-fill: #c89ab5;
+}
+
+/* Toggle Button */
+.toggle-button {
+    -fx-background-color: #4f2940;
+    -fx-text-fill: #ffe4f0;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-color: #ff9dc7;
+    -fx-border-width: 1.5;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #ff9dc7;
+    -fx-text-fill: #2d1122;
+}
+
+.toggle-button:hover {
+    -fx-background-color: #5a2a44;
+    -fx-text-fill: #ffffff;
+}
+
+.toggle-button:pressed {
+    -fx-background-color: #e0689e;
+}
+
+/* Labels عامة */
+.label {
+    -fx-text-fill: #ffe4f0;
+}
+
+.label.gray {
+    -fx-text-fill: #c89ab5;
+}
+
+/* Cards */
+.card {
+    -fx-background-color: #3a1a2c;               /* غامق وردي-بني ناعم */
+    -fx-background-radius: 16;
+    -fx-padding: 24;
+
+    -fx-border-color: #6b3f55;                   /* حدود وردي غامق ناعم */
+    -fx-border-width: 1.4;
+    -fx-border-radius: 16;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 6);
+}
+
+.card .label,
+.card .text,
+.card .button .text,
+.card .hyperlink {
+    -fx-text-fill: #ffffff !important;           /* أبيض نقي */
+}
+
+.card .title,
+.card .header-label {
+    -fx-text-fill: #ffadd3 !important;
+}
+
+.card .subtitle,
+.card .description {
+    -fx-text-fill: #ffe4f0 !important;
+    -fx-font-size: 14px;
 }
 
 /* Page Title */
 .page-title {
     -fx-font-size: 32px;
     -fx-font-weight: bold;
-    -fx-text-fill: #35221b;
+    -fx-text-fill: #ffffff;
 }
 
-/* Cards (Sales, Orders, Customers) in Dashboard */
-.card {
-    -fx-background-color: #ffffff;
+/* ────────────── Charts: Pie & Line - نصوص واضحة جدًا ────────────── */
+
+/* خلفية الـ Chart شفافة */
+.dark .chart,
+.dark .pie-chart,
+.dark .line-chart,
+.dark .chart-plot-background {
+    -fx-background-color: transparent !important;
+}
+
+/* Pie Chart: أسماء العملاء داخل أو جنب القطع */
+.dark .chart-pie-label,
+.dark .pie-label,
+.dark .chart-pie-label-line .label,
+.dark .chart-pie-label-text,
+.dark .chart-pie-label .text,
+.dark .label.chart-pie-label {
+    -fx-text-fill: #ffffff !important;
+    -fx-font-weight: bold !important;
+    -fx-font-size: 14px !important;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 6, 0, 0, 3) !important;
+}
+
+/* Line Chart: الأرقام والشهور على المحاور */
+.dark .axis .tick-label,
+.dark .axis-label,
+.dark .number-axis .tick-label,
+.dark .category-axis .tick-label,
+.dark .chart .axis .label,
+.dark .chart .tick-label {
+    -fx-text-fill: #ffffff !important;
+    -fx-font-weight: bold !important;
+    -fx-font-size: 14px !important;
+}
+
+/* Tick Marks على المحاور */
+.dark .axis-tick-mark,
+.dark .axis-minor-tick-mark {
+    -fx-stroke: #ffadd3 !important;
+    -fx-stroke-width: 2 !important;
+}
+
+/* Grid Lines داخل الرسمة */
+.dark .chart-vertical-grid-lines,
+.dark .chart-horizontal-grid-lines {
+    -fx-stroke: #5a2a44 !important;
+    -fx-stroke-width: 0.5;
+}
+
+/* عنوان الرسمة */
+.dark .chart-title .label,
+.dark .chart .title {
+    -fx-text-fill: #ffadd3 !important;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* الـ Legend (الجدول الجانبي تحت الرسمة) */
+.dark .chart-legend {
+    -fx-background-color: #4a1f35 !important;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-border-color: #6b3f55;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.dark .chart-legend-item .label,
+.dark .chart-legend .label {
+    -fx-text-fill: #ffffff !important;
+    -fx-font-size: 13px;
+}
+
+/* ────────────── Pie Chart Labels (الأسماء داخل الرسمة فقط) - واضحة جدًا بدون تغيير الألوان ────────────── */
+
+.dark .chart-pie-label,
+.dark .pie-label,
+.dark .chart-pie-label > .label,
+.dark .chart-pie-label-text,
+.dark .chart-pie-label-line .text,
+.dark .chart-pie-label .text,
+.dark .label.chart-pie-label,
+.dark .chart .pie-label {
+    -fx-text-fill: #ffffff !important;          /* أسود قوي جدًا عشان يبان على أي لون قطعة */
+    -fx-font-weight: bold !important;
+    -fx-font-size: 14px !important;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.9), 6, 0, 0, 2) !important;  /* ظل أبيض خفيف يبرز الأسود */
+    -fx-padding: 2 4 2 4;                       /* مسافة داخلية صغيرة عشان ما يلزقش */
+}
+
+/* لو الـ label لسه مش متأثر، نجبره كمان هنا */
+.dark .chart-pie-label .label,
+.dark .chart-pie-label .text {
+    -fx-fill: #000000 !important;
+    -fx-text-fill: #000000 !important;
+}
+
+/* الخط في الـ Line Chart */
+.dark .default-color0.chart-series-line {
+    -fx-stroke: #ff9dc7 !important;
+    -fx-stroke-width: 3;
+}
+
+.dark .chart-symbol {
+    -fx-background-color: #ff85b8;
+}
+
+.dark .chart-pie-label,
+.dark .chart-pie-label .label,
+.dark .chart-pie-label .text,
+.dark .pie-label,
+.dark .chart-pie-label-line .text,
+.dark .chart-pie-label-text,
+.dark .label.chart-pie-label,
+.dark .chart .pie-label,
+.dark .chart-pie-label > .text,
+.dark .chart-pie-label > .label {
+    -fx-text-fill: #ffffff !important;          /* أبيض نقي 100% */
+    -fx-fill: #ffffff !important;               /* للـ fill في حالة text node */
+    -fx-font-weight: bold !important;
+    -fx-font-size: 14px !important;             /* حجم كبير شوية عشان يبان */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 8, 0, 0, 4) !important;  /* ظل أسود قوي يبرز الأبيض */
+}
+
+/* لو الـ label لسه مش متجاوب، نجبره كمان */
+.dark .chart-pie-label-line {
+    -fx-stroke: #ffffff !important;             /* خط الربط بين القطعة والاسم أبيض */
+    -fx-stroke-width: 1.5;
+}
+
+#timeLabel {
+    -fx-text-fill: #ffadd3 !important;
+    -fx-font-weight: bold !important;
+    -fx-font-size: 28px !important;
+}
+
+#dateLabel {
+    -fx-text-fill: #ffadd3 !important;
+    -fx-font-size: 16px !important;
+}
+
+
+/* ────────────── Form & ScrollPane في صفحة Add/Update Employee (Dark Mode) ────────────── */
+
+/* 1. الـ ScrollPane اللي حوالين الفورم كله (الإطار الخارجي اللي كان أبيض) */
+.form-scroll-pane,
+.form-scroll-pane .viewport,
+.dark .scroll-pane.right,
+.dark ScrollPane {
+    -fx-background: #3a1a2c !important;
+    -fx-background-color: #3a1a2c !important;
+    -fx-background-insets: 0 !important;
+}
+
+/* 2. الفورم الداخلي نفسه (الكارت اللي فيه الحقول) */
+.employee-form-card {
+    -fx-background-color: #4a1f35 !important;     /* لون مختلف وأفتح شوية من الـ ScrollPane */
     -fx-background-radius: 15;
     -fx-padding: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 5);
+    -fx-border-color: #6b3f55 !important;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 12, 0, 0, 5);
 }
 
-/* Primary Buttons */
-.primary-button {
-    -fx-background-color: #5c4637;
-    -fx-text-fill: #f3dec3;
-    -fx-background-radius: 10;
-    -fx-font-size: 14px;
+/* 3. كل النصوص داخل الفورم (Labels) تبقى بيضاء وواضحة */
+.employee-form-card .label {
+    -fx-text-fill: #ffffff !important;
     -fx-font-weight: bold;
-    -fx-padding: 10 25;
-    -fx-cursor: hand;
 }
 
-.primary-button:hover {
-    -fx-background-color: #6b5445;
-}
-
-/* Sidebar */
-.sidebar {
-    -fx-background-color: #35221b;
-    -fx-padding: 20;
-}
-
-/* Sidebar Buttons  */
-.sidebar-button {
-    -fx-background-color: #4b3a2e;
-    -fx-text-fill: #f3dec3;
-    -fx-background-radius: 20;
-    -fx-font-size: 15px;
-    -fx-padding: 10 20;
-    -fx-alignment: CENTER_LEFT;
-    -fx-cursor: hand;
-}
-
-.sidebar-button:hover {
-    -fx-background-color: #5c4637;
-}
-
-.sidebar-button:pressed {
-    -fx-background-color: #3d2c23;
-}
-
-/* Active Sidebar Button  */
-.sidebar-button:selected,
-.sidebar-button.active {
-    -fx-background-color: #d4b79a !important;
-    -fx-text-fill: #35221b !important;
-    -fx-background-radius: 20;
-}
-
-/* Logout Button */
-#logoutButton {
-    -fx-background-color: #c0392b;
-    -fx-text-fill: white;
-    -fx-background-radius: 20;
-}
-
-#logoutButton:hover {
-    -fx-background-color: #e74c3c;
-}
-
-/* Labels */
-.label {
-    -fx-text-fill: #35221b;
-}
-
-.label.gray {
-    -fx-text-fill: #7f6a5a;
-}
-
-/* Slider */
-.slider .track {
-    -fx-background-color: #d4b79a;
-}
-
-.slider .thumb {
-    -fx-background-color: #35221b;
-}
-
-/* ToggleButton */
-.toggle-button {
-    -fx-background-color: #5c4637;
-    -fx-text-fill: #f3dec3;
-    -fx-background-radius: 20;
-}
-
-.toggle-button:selected {
-    -fx-background-color: #d4b79a;
-    -fx-text-fill: #35221b;
-}
-
-/* TableView */
-.table-view {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 10;
-}
-
-.table-row-cell {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: #35221b;
-}
-
-.table-row-cell:selected {
-    -fx-background-color: #d4b79a;
-    -fx-text-fill: #35221b;
-}
-
-/* TextField, ComboBox */
-.text-field, .password-field, .combo-box {
-    -fx-background-color: #ffffff;
-    -fx-text-fill: black;
-    -fx-background-radius: 10;
-    -fx-border-color: black;
+/* الحقول داخل الفورم (TextField, PasswordField, ComboBox) */
+.employee-form-card .text-field,
+.employee-form-card .password-field,
+.employee-form-card .combo-box {
+    -fx-background-color: #5a2a44 !important;
+    -fx-text-fill: #ffffff !important;
+    -fx-prompt-text-fill: #c89ab5 !important;
+    -fx-border-color: #ff9dc7 !important;
     -fx-border-radius: 10;
-    -fx-padding: 5 10;
 }
 
-
-/* Charts
-.chart {
-    -fx-background-color: transparent;
+/* زر Add Employee داخل الفورم */
+.employee-form-card .save-button {
+    -fx-background-color: #ff9dc7 !important;
+    -fx-text-fill: #2d1122 !important;
 }
 
-.chart-plot-background {
-    -fx-background-color: #ffffff;
-}
+/* ────────────── ComboBox في الفورم (Select Position & Select Status) - لون فاتح وواضح ────────────── */
 
-.chart-line-symbol {
-    -fx-background-color: #e74c3c;
-}
-
-
-.scroll-pane {
-    -fx-background: #f3dec3;
-    -fx-background-color: transparent;
-}
-
-.scroll-pane .viewport {
-    -fx-background-color: transparent;
-}
-
-.scroll-pane > .corner {
-    -fx-background-color: transparent;
-}o
-
-/* Scroll bar */
-.scroll-bar:vertical, .scroll-bar:horizontal {
-    -fx-background-color: transparent;
-}
-
-.scroll-bar .thumb {
-    -fx-background-color: #5c4637;
+/* خلفية الـ ComboBox نفسه (الصندوق) */
+.employee-form-card .combo-box {
+    -fx-background-color: #ffe4f0 !important;     /* وردي فاتح جدًا (زي الـ Light Mode) */
     -fx-background-radius: 10;
+    -fx-border-color: #ff9dc7 !important;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 10;
 }
 
-.scroll-bar .thumb:hover {
-    -fx-background-color: #6b5445;
-}
-
-/* Add Button */
-.add-button {
-    -fx-background-color: #27ae60;
-    -fx-text-fill: white;
-    -fx-background-radius: 10;
+/* النص اللي مكتوب جوا الـ ComboBox (اللي اختاره المستخدم) */
+.employee-form-card .combo-box .cell {
+    -fx-text-fill: #2e0d1a !important;            /* نص غامق جدًا عشان يبان على الوردي الفاتح */
     -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-padding: 10 25;
-    -fx-cursor: hand;
-}
-.add-button:hover {
-    -fx-background-color: #2ecc71;
 }
 
-/* Update Button */
-.update-button {
-    -fx-background-color: #2980b9;
-    -fx-text-fill: white;
-    -fx-background-radius: 10;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-padding: 10 25;
-    -fx-cursor: hand;
+/* النص اللي في القائمة المنسدلة (الخيارات) */
+.employee-form-card .combo-box-popup .list-cell {
+    -fx-text-fill: #2e0d1a !important;
+    -fx-background-color: #ffe4f0 !important;
 }
 
-.update-button:hover {
-    -fx-background-color: #3498db;
+/* لما يتفتح الـ ComboBox (القائمة المنسدلة) */
+.employee-form-card .combo-box-popup .list-view {
+    -fx-background-color: #ffe4f0 !important;
 }
 
-/* Delete Button */
-.delete-button {
-    -fx-background-color: #c0392b;
-    -fx-text-fill: white;
-    -fx-background-radius: 10;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-padding: 10 25;
-    -fx-cursor: hand;
-}
-.delete-button:hover {
-    -fx-background-color: #e74c3c;
+/* Prompt text (اللي مكتوب "Select Position" أو "Select Status" قبل ما يختار) */
+.employee-form-card .combo-box .prompt-text {
+    -fx-text-fill: #a06a80 !important;            /* رمادي وردي فاتح */
 }
 
-/* Clear Button */
-.clear-button {
-    -fx-background-color: #34495e;
-    -fx-text-fill: white;
-    -fx-background-radius: 10;
-    -fx-font-weight: bold;
-    -fx-font-size: 14px;
-    -fx-padding: 10 25;
-    -fx-cursor: hand;
+.app-description {
+    -fx-fill: white;
 }
-.clear-button:hover {
-    -fx-background-color: #5d6d7e;
+.text-content {
+    -fx-fill: white;
 }
-
-
-.chart-pie-node {
-    -fx-border-color: transparent;
-}
-

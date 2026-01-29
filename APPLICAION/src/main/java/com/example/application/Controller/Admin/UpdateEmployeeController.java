@@ -38,7 +38,7 @@ public class UpdateEmployeeController extends BaseController {
     @FXML private DatePicker createdAtPicker;
     @FXML private Label statusLabel;
 
-    // TableView and columns
+    // TableView
     @FXML private TableView<Employee> employeeTable;
     @FXML private TableColumn<Employee, String> empIdCol;
     @FXML private TableColumn<Employee, String> firstNameCol;
@@ -51,8 +51,7 @@ public class UpdateEmployeeController extends BaseController {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            super.initialize(url, rb); // Base controller init
-            // Font size
+            super.initialize(url, rb);
             updateFontSize(ThemeManager.getCurrentFontSize());
 
 

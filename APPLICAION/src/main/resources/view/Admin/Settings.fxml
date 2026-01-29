@@ -90,7 +90,7 @@
                     <Label text="Appearance" style="-fx-font-weight: bold;"/>
                     <HBox spacing="10" alignment="CENTER_LEFT">
                         <Label text="Dark Mode:" style="-fx-font-weight: bold;"/>
-                        <ToggleButton fx:id="darkModeToggle" text="Off"/>
+                        <ToggleButton fx:id="darkModeToggle" text="ON"/>
                     </HBox>
                 </VBox>
 

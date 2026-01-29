@@ -35,7 +35,7 @@ public class SettingsController extends BaseController {
     public void initialize(URL url, ResourceBundle rb) {
         super.initialize(url, rb);
 
-
+        // Font size
         double currentFontSize = ThemeManager.getCurrentFontSize();
         fontSlider.setValue(currentFontSize);
         updateFontLabel(currentFontSize);
@@ -46,18 +46,29 @@ public class SettingsController extends BaseController {
             ThemeManager.applyFontSize(size);
         });
 
+        // ────────────── Dark Mode Toggle ───────────────
+        boolean isCurrentlyDark = ThemeManager.isDarkMode();
 
-        boolean isDark = ThemeManager.isDarkMode();
+        // ───────────────────────────────────────────────
+        // النمط اللي عايزاه: النص يقول إيه اللي هيحصل لو ضغطت
+        // ───────────────────────────────────────────────
 
-        darkModeToggle.setSelected(!isDark);
-        darkModeToggle.setText(isDark ? "On" : "Off");
+        // لو الوضع حاليًا Light → النص "On" (يعني اضغطي عشان تفعلي Dark)
+        // لو الوضع حاليًا Dark  → النص "Off" (يعني اضغطي عشان ترجعي Light)
+        darkModeToggle.setSelected(!isCurrentlyDark);   // مهم: عكس الحالة
+        darkModeToggle.setText(isCurrentlyDark ? "Off" : "On");
 
         updateLogoForTheme();
 
-        darkModeToggle.selectedProperty().addListener((obs, oldVal, isSelected) -> {
-            ThemeManager.switchTheme(!isSelected);
+        darkModeToggle.selectedProperty().addListener((obs, wasSelected, isNowSelected) -> {
+            // هنا isNowSelected = true يعني المستخدم ضغط → يبغى يفعّل الـ Dark
+            ThemeManager.switchTheme(isNowSelected);
+
             updateLogoForTheme();
-            darkModeToggle.setText(isSelected ? "On" : "Off");
+
+            // بعد التغيير: نحدث النص حسب الوضع الجديد
+            boolean nowDark = ThemeManager.isDarkMode();   // أو نستخدم isNowSelected مباشرة
+            darkModeToggle.setText(nowDark ? "Off" : "On");
         });
     }
 
