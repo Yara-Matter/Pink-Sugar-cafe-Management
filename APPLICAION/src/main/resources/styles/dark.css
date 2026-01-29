@@ -1,51 +1,49 @@
-/* =========================================
-   Dark Mode - Elegant Girly Pink Dark
-   ========================================= */
 
-/* الجذر الرئيسي */
+ /*Dark Mode - Elegant Girly Pink Dark*/
+
+
 .root.dark {
-    -fx-background-color: #2d1122;          /* خلفية غامقة وردية-بنية ناعمة */
-    -fx-text-fill: #ffe4f0;                 /* نص افتراضي فاتح */
+    -fx-background-color: #2d1122;          
+    -fx-text-fill: #ffe4f0;                
 }
 
-/* الـ sidebar يفضل لونه الوردي-بني الغامق */
+
 .sidebar {
     -fx-background-color: #815257 !important;
     -fx-padding: 20;
 }
 
-/* sidebar buttons - ألوان غامقة متناسقة مع الخلفية */
+
 .sidebar-button {
-    -fx-background-color: #6b3f55;          /* غامق وردي-بني أغمق شوية من الـ sidebar */
-    -fx-text-fill: #ffe4f0;                 /* وردي فاتح جدًا / أبيض مائل للوردي عشان يبان */
+    -fx-background-color: #6b3f55;         
+    -fx-text-fill: #ffe4f0;                
     -fx-background-radius: 20;
     -fx-font-size: 15px;
     -fx-padding: 12 24;
     -fx-alignment: CENTER_LEFT;
     -fx-cursor: hand;
-    -fx-border-color: #9c5e7a;              /* حدود خفيفة وردية */
+    -fx-border-color: #9c5e7a;              
     -fx-border-width: 1;
     -fx-border-radius: 20;
 }
 
-/* Hover: يفتح شوية ويبقى أقوى */
 .sidebar-button:hover {
-    -fx-background-color: #9c5e7a;          /* وردي غامق أفتح */
-    -fx-text-fill: #ffffff;                 /* أبيض نقي */
+    -fx-background-color: #9c5e7a;        
+    -fx-text-fill: #ffffff;                
     -fx-scale-x: 1.02;
     -fx-scale-y: 1.02;
 }
 
-/* Pressed: يغمق أكتر */
+
 .sidebar-button:pressed {
-    -fx-background-color: #5a2a44;          /* أغمق شوية */
-    -fx-text-fill: #ffadd3;                 /* وردي فاتح للنص */
+    -fx-background-color: #5a2a44;         
+    -fx-text-fill: #ffadd3;                 
 }
 
-/* Active / Selected (الصفحة الحالية) */
+
 .sidebar-button.active,
 .sidebar-button:selected {
-    -fx-background-color: #ff85b8 !important;   /* وردي قوي زي الثيم */
+    -fx-background-color: #ff85b8 !important;   
     -fx-text-fill: #ffffff !important;
     -fx-effect: dropshadow(gaussian, rgba(255, 105, 180, 0.5), 12, 0, 0, 5);
     -fx-border-color: #ff9dc7;
@@ -113,7 +111,7 @@
 
 /* Action Buttons (Add, Update, Delete, Clear) */
 .add-button {
-    -fx-background-color: #c8a0d8;      /* بنفسجي وردي فاتح */
+    -fx-background-color: #c8a0d8;    
     -fx-text-fill: #1a1a1a;
     -fx-background-radius: 12;
     -fx-font-weight: bold;
@@ -125,7 +123,7 @@
 }
 
 .update-button {
-    -fx-background-color: #ffadd3;      /* وردي فاتح */
+    -fx-background-color: #ffadd3;     
     -fx-text-fill: #1a1a1a;
     -fx-background-radius: 12;
     -fx-font-weight: bold;
@@ -174,55 +172,49 @@
 }
 
 /* TableView */
-/* ────────────── Sales TableView - Dark Mode (خلفية مختلفة + ألوان واضحة) ────────────── */
-
-/* خلفية الجدول ككل (أغمق شوية أو لون مختلف عن الخلفية الرئيسية) */
 .dark .table-view {
-    -fx-background-color: #3e1e32 !important;     /* غامق وردي-بني أغمق شوية من الخلفية الرئيسية */
+    -fx-background-color: #3e1e32 !important;    
     -fx-background-radius: 12;
     -fx-border-color: #6b3f55;
     -fx-border-width: 1.2;
     -fx-border-radius: 12;
 }
 
-/* خلفية رأس الأعمدة (اسماء الأعمدة) - لون مختلف ومميز */
 .dark .table-view .column-header-background {
-    -fx-background-color: #4f2940 !important;     /* لون غامق مميز (وردي-بني داكن) */
+    -fx-background-color: #4f2940 !important;    
     -fx-background-radius: 12 12 0 0;
 }
 
-/* نص أسماء الأعمدة (Sale ID, Customer Name, Contact No., Total, Date) */
+
 .dark .table-view .column-header .label {
-    -fx-background-color: #b57e94 !important;            /* وردي فاتح مميز جدًا وواضح */
+    -fx-background-color: #b57e94 !important;            
     -fx-font-weight: bold !important;
     -fx-font-size: 14px !important;
     -fx-text-fill: #ffffff;
 }
 
-/* خلفية الصفوف العادية + نص الخلايا أبيض */
+
 .dark .table-row-cell {
-    -fx-background-color: #3e1e32 !important;     /* نفس خلفية الجدول */
-    -fx-text-fill: #ffffff !important;            /* النص داخل الخلايا أبيض نقي */
+    -fx-background-color: #3e1e32 !important;    
+    -fx-text-fill: #ffffff !important;           
 }
 
-/* Hover على الصف (تفتيح خفيف عشان يبرز) */
+
 .dark .table-row-cell:hover {
-    -fx-background-color: #5a2a44 !important;     /* رمادي وردي غامق أفتح شوية */
+    -fx-background-color: #5a2a44 !important;   
 }
 
-/* الصف المختار (لون قوي عشان يبان) */
 .dark .table-row-cell:selected {
-    -fx-background-color: #ff9dc7 !important;     /* وردي رئيسي */
-    -fx-text-fill: #2d1122 !important;            /* نص غامق عشان يبان على الوردي */
+    -fx-background-color: #ff9dc7 !important;    
+    -fx-text-fill: #2d1122 !important;            
 }
 
-/* النصوص داخل الخلايا (نتأكد إنها أبيض) */
 .dark .table-cell {
     -fx-text-fill: #ffffff !important;
     -fx-font-size: 13px;
 }
 
-/* خطوط الفصل بين الصفوف (خفيفة) */
+
 .dark .table-row-cell .table-cell {
     -fx-border-color: #6b3f55 transparent transparent transparent;
     -fx-border-width: 0 0 1 0;
@@ -284,7 +276,7 @@
     -fx-background-color: #e0689e;
 }
 
-/* Labels عامة */
+
 .label {
     -fx-text-fill: #ffe4f0;
 }
@@ -295,11 +287,11 @@
 
 /* Cards */
 .card {
-    -fx-background-color: #3a1a2c;               /* غامق وردي-بني ناعم */
+    -fx-background-color: #3a1a2c;              
     -fx-background-radius: 16;
     -fx-padding: 24;
 
-    -fx-border-color: #6b3f55;                   /* حدود وردي غامق ناعم */
+    -fx-border-color: #6b3f55;                  
     -fx-border-width: 1.4;
     -fx-border-radius: 16;
 
@@ -310,7 +302,7 @@
 .card .text,
 .card .button .text,
 .card .hyperlink {
-    -fx-text-fill: #ffffff !important;           /* أبيض نقي */
+    -fx-text-fill: #ffffff !important;         
 }
 
 .card .title,
@@ -331,9 +323,7 @@
     -fx-text-fill: #ffffff;
 }
 
-/* ────────────── Charts: Pie & Line - نصوص واضحة جدًا ────────────── */
 
-/* خلفية الـ Chart شفافة */
 .dark .chart,
 .dark .pie-chart,
 .dark .line-chart,
@@ -341,7 +331,7 @@
     -fx-background-color: transparent !important;
 }
 
-/* Pie Chart: أسماء العملاء داخل أو جنب القطع */
+
 .dark .chart-pie-label,
 .dark .pie-label,
 .dark .chart-pie-label-line .label,
@@ -354,7 +344,7 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 6, 0, 0, 3) !important;
 }
 
-/* Line Chart: الأرقام والشهور على المحاور */
+
 .dark .axis .tick-label,
 .dark .axis-label,
 .dark .number-axis .tick-label,
@@ -366,21 +356,21 @@
     -fx-font-size: 14px !important;
 }
 
-/* Tick Marks على المحاور */
+
 .dark .axis-tick-mark,
 .dark .axis-minor-tick-mark {
     -fx-stroke: #ffadd3 !important;
     -fx-stroke-width: 2 !important;
 }
 
-/* Grid Lines داخل الرسمة */
+
 .dark .chart-vertical-grid-lines,
 .dark .chart-horizontal-grid-lines {
     -fx-stroke: #5a2a44 !important;
     -fx-stroke-width: 0.5;
 }
 
-/* عنوان الرسمة */
+
 .dark .chart-title .label,
 .dark .chart .title {
     -fx-text-fill: #ffadd3 !important;
@@ -388,7 +378,7 @@
     -fx-font-weight: bold;
 }
 
-/* الـ Legend (الجدول الجانبي تحت الرسمة) */
+
 .dark .chart-legend {
     -fx-background-color: #4a1f35 !important;
     -fx-background-radius: 10;
@@ -404,7 +394,6 @@
     -fx-font-size: 13px;
 }
 
-/* ────────────── Pie Chart Labels (الأسماء داخل الرسمة فقط) - واضحة جدًا بدون تغيير الألوان ────────────── */
 
 .dark .chart-pie-label,
 .dark .pie-label,
@@ -414,21 +403,21 @@
 .dark .chart-pie-label .text,
 .dark .label.chart-pie-label,
 .dark .chart .pie-label {
-    -fx-text-fill: #ffffff !important;          /* أسود قوي جدًا عشان يبان على أي لون قطعة */
+    -fx-text-fill: #ffffff !important;         
     -fx-font-weight: bold !important;
     -fx-font-size: 14px !important;
-    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.9), 6, 0, 0, 2) !important;  /* ظل أبيض خفيف يبرز الأسود */
-    -fx-padding: 2 4 2 4;                       /* مسافة داخلية صغيرة عشان ما يلزقش */
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.9), 6, 0, 0, 2) !important;  
+    -fx-padding: 2 4 2 4;                      
 }
 
-/* لو الـ label لسه مش متأثر، نجبره كمان هنا */
+
 .dark .chart-pie-label .label,
 .dark .chart-pie-label .text {
     -fx-fill: #000000 !important;
     -fx-text-fill: #000000 !important;
 }
 
-/* الخط في الـ Line Chart */
+
 .dark .default-color0.chart-series-line {
     -fx-stroke: #ff9dc7 !important;
     -fx-stroke-width: 3;
@@ -448,16 +437,16 @@
 .dark .chart .pie-label,
 .dark .chart-pie-label > .text,
 .dark .chart-pie-label > .label {
-    -fx-text-fill: #ffffff !important;          /* أبيض نقي 100% */
-    -fx-fill: #ffffff !important;               /* للـ fill في حالة text node */
+    -fx-text-fill: #ffffff !important;         
+    -fx-fill: #ffffff !important;               
     -fx-font-weight: bold !important;
-    -fx-font-size: 14px !important;             /* حجم كبير شوية عشان يبان */
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 8, 0, 0, 4) !important;  /* ظل أسود قوي يبرز الأبيض */
+    -fx-font-size: 14px !important;            
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 8, 0, 0, 4) !important;  
 }
 
-/* لو الـ label لسه مش متجاوب، نجبره كمان */
+
 .dark .chart-pie-label-line {
-    -fx-stroke: #ffffff !important;             /* خط الربط بين القطعة والاسم أبيض */
+    -fx-stroke: #ffffff !important;            
     -fx-stroke-width: 1.5;
 }
 
@@ -473,9 +462,7 @@
 }
 
 
-/* ────────────── Form & ScrollPane في صفحة Add/Update Employee (Dark Mode) ────────────── */
 
-/* 1. الـ ScrollPane اللي حوالين الفورم كله (الإطار الخارجي اللي كان أبيض) */
 .form-scroll-pane,
 .form-scroll-pane .viewport,
 .dark .scroll-pane.right,
@@ -485,9 +472,9 @@
     -fx-background-insets: 0 !important;
 }
 
-/* 2. الفورم الداخلي نفسه (الكارت اللي فيه الحقول) */
+
 .employee-form-card {
-    -fx-background-color: #4a1f35 !important;     /* لون مختلف وأفتح شوية من الـ ScrollPane */
+    -fx-background-color: #4a1f35 !important;     
     -fx-background-radius: 15;
     -fx-padding: 20;
     -fx-border-color: #6b3f55 !important;
@@ -496,13 +483,13 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 12, 0, 0, 5);
 }
 
-/* 3. كل النصوص داخل الفورم (Labels) تبقى بيضاء وواضحة */
+
 .employee-form-card .label {
     -fx-text-fill: #ffffff !important;
     -fx-font-weight: bold;
 }
 
-/* الحقول داخل الفورم (TextField, PasswordField, ComboBox) */
+
 .employee-form-card .text-field,
 .employee-form-card .password-field,
 .employee-form-card .combo-box {
@@ -513,43 +500,41 @@
     -fx-border-radius: 10;
 }
 
-/* زر Add Employee داخل الفورم */
+
 .employee-form-card .save-button {
     -fx-background-color: #ff9dc7 !important;
     -fx-text-fill: #2d1122 !important;
 }
 
-/* ────────────── ComboBox في الفورم (Select Position & Select Status) - لون فاتح وواضح ────────────── */
 
-/* خلفية الـ ComboBox نفسه (الصندوق) */
 .employee-form-card .combo-box {
-    -fx-background-color: #ffe4f0 !important;     /* وردي فاتح جدًا (زي الـ Light Mode) */
+    -fx-background-color: #ffe4f0 !important;    
     -fx-background-radius: 10;
     -fx-border-color: #ff9dc7 !important;
     -fx-border-width: 1.5;
     -fx-border-radius: 10;
 }
 
-/* النص اللي مكتوب جوا الـ ComboBox (اللي اختاره المستخدم) */
+
 .employee-form-card .combo-box .cell {
-    -fx-text-fill: #2e0d1a !important;            /* نص غامق جدًا عشان يبان على الوردي الفاتح */
+    -fx-text-fill: #2e0d1a !important;           
     -fx-font-weight: bold;
 }
 
-/* النص اللي في القائمة المنسدلة (الخيارات) */
+
 .employee-form-card .combo-box-popup .list-cell {
     -fx-text-fill: #2e0d1a !important;
     -fx-background-color: #ffe4f0 !important;
 }
 
-/* لما يتفتح الـ ComboBox (القائمة المنسدلة) */
+
 .employee-form-card .combo-box-popup .list-view {
     -fx-background-color: #ffe4f0 !important;
 }
 
-/* Prompt text (اللي مكتوب "Select Position" أو "Select Status" قبل ما يختار) */
+
 .employee-form-card .combo-box .prompt-text {
-    -fx-text-fill: #a06a80 !important;            /* رمادي وردي فاتح */
+    -fx-text-fill: #a06a80 !important;           
 }
 
 .app-description {
