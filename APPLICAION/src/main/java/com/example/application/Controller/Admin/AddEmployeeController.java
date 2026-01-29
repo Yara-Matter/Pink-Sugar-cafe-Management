@@ -104,7 +104,7 @@ public class AddEmployeeController extends BaseController {
             return;
         }
 
-        //  REGEX VALIDATION
+        //  REGEX  validation
         String contactRegex = "^01[0125][0-9]{8}$";
         String idRegex = "^E[0-9]{3}$";
 
@@ -122,7 +122,7 @@ public class AddEmployeeController extends BaseController {
             return;
         }
 
-        // DB INSERT
+        // DB 
         try (Connection conn = DBC.getInstance().getConnection()) {
 
             String sql = "INSERT INTO EMPLOYEE (EMP_ID, FIRST_NAME, LAST_NAME, CONTACT_NUMBER, PASSWORD, POSITION, STATUS, CREATED_AT) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
